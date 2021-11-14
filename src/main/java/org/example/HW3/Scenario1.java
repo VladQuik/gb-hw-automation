@@ -39,9 +39,11 @@ public class HW3 {
         Select crmProjectManager = new Select(driver.findElement(By.name("crm_project[manager]")));
         crmProjectManager.selectByVisibleText("Митрофанов Никита");
 
+        driver.findElement(By.xpath("//div[contains(@id, \"s2id_crm_project_contactMain\")]/a")).click();
         driver.findElement(By.xpath("//div[contains(@id,'select2-drop')]/div/input")).sendKeys("Potter Harry");
         driver.findElement(By.xpath("//ul/li[1]/div/span[text()='Potter Harry']")).click();
         driver.findElement(By.xpath("//button[contains(text(),'Сохранить и закрыть')]")).click();
+        Thread.sleep(10000);
         driver.quit();
     }
 
